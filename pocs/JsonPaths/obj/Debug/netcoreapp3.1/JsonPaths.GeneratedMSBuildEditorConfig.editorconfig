@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = JsonPaths
+build_property.ProjectDir = C:\workspace\git\dotnet\pocs\JsonPaths\

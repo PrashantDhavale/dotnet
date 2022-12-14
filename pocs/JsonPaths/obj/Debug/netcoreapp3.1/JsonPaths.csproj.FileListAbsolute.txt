@@ -1,0 +1,16 @@
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.exe
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.deps.json
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.runtimeconfig.json
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.runtimeconfig.dev.json
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.dll
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\JsonPaths.pdb
+C:\workspace\git\dotnet\pocs\JsonPaths\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.csproj.AssemblyReference.cache
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.GeneratedMSBuildEditorConfig.editorconfig
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.AssemblyInfoInputs.cache
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.AssemblyInfo.cs
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.csproj.CoreCompileInputs.cache
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.csproj.CopyComplete
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.dll
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.pdb
+C:\workspace\git\dotnet\pocs\JsonPaths\obj\Debug\netcoreapp3.1\JsonPaths.genruntimeconfig.cache
