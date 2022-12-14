@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button type="submit" class="btn btn-info" (click)="onGetClick();">
+        List cats alphabetically grouped by owners gender
+      </button>
+      <div *ngIf="isLoading" style="padding-top:10px;">
+        <br/>
+        <i class="fa fa-circle-o-notch fa-spin fa-5x fa-fw"></i>
+      </div>
+      <div *ngIf="apiData?.length > 0">
+        <div>
+          <ul style="list-style-type:none">
+            <li *ngFor="let item of apiData">
+              <h4>{{item.ownersGender}}</h4>
+              <ul style="list-style-type:square">
+                <li *ngFor="let cat of item.catNames">{{cat}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" *ngIf="hasErrored">
+    <div class="col-xs-12">
+      <br/>
+      <div class="alert alert-danger">
+        <strong>Failed! </strong> Please check if the API is available.
+      </div>
+    </div>
+  </div>
+</div>
