@@ -287,3 +287,6 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 pocs/.vs/pocs/v16/.suo
+*.suo
+pocs/.vs/pocs/DesignTimeBuild/.dtbcache.v2
+pocs/.vs/pocs/v16/.suo
