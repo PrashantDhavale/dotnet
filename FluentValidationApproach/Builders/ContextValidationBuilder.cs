@@ -6,19 +6,19 @@ namespace FluentValidationApproach.Validators;
 
 public class ContextValidator : AbstractValidator<Context> { }
 
-public class ValidatorBuilder
+public class ContextValidationBuilder
 {
     private readonly ContextValidator _validator = new();
 
     public ContextValidator Build() => _validator;
 
-    public ValidatorBuilder WithMandatoryOrderIdValidator()
+    public ContextValidationBuilder WithMandatoryOrderIdValidator()
     {
         _validator.Include(new MandatoryOrderIdValidatorRule());
         return this;
     }
 
-    public ValidatorBuilder WithOptionalOrderLocationValidator()
+    public ContextValidationBuilder WithOptionalOrderLocationValidator()
     {
         _validator.Include(new OptionalOrderLocationValidatorRule());
         return this;

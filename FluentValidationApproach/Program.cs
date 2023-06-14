@@ -11,12 +11,12 @@ public class Program
     {
         var req = new Context() { OrderId = null, OrderLocation = "AUST" };
 
-        var validator = new ValidatorBuilder()
+        var cvb = new ContextValidationBuilder()
             .WithMandatoryOrderIdValidator()
             .WithOptionalOrderLocationValidator()
             .Build();
 
-        var result = await validator.ValidateAsync(req);
+        var result = await cvb.ValidateAsync(req);
 
         if (!result.IsValid)
         {
