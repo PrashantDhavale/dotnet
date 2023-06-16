@@ -18,6 +18,12 @@ public class ContextValidationBuilder
         return this;
     }
 
+    public ContextValidationBuilder WithOrderJsonPayloadValidator()
+    {
+        _validator.Include(new JsonPayloadValidationRule());
+        return this;
+    }
+
     public ContextValidationBuilder WithOptionalOrderLocationValidator()
     {
         _validator.Include(new OptionalOrderLocationValidatorRule());

@@ -9,9 +9,10 @@ public class Program
 {
     public static async Task Main()
     {
-        var req = new Context() { OrderId = null, OrderLocation = "AUST" };
+        var req = new Context() { OrderId = null, OrderLocation = "AUST",JsonPayload= new byte[10]  };
 
         var cvb = new ContextValidationBuilder()
+            .WithOrderJsonPayloadValidator()
             .WithMandatoryOrderIdValidator()
             .WithOptionalOrderLocationValidator()
             .Build();
