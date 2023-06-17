@@ -1,0 +1,14 @@
+{
+  "data": {
+    "balances": [
+      {
+        "id": "1",
+        "balance": 50
+      },
+      {
+        "id": "2",
+        "balance": 60
+      }
+    ]
+  }
+}
