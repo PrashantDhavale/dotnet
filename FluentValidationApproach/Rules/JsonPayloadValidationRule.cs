@@ -1,5 +1,6 @@
 ﻿using FluentValidationApproach.Models;
 using FluentValidation;
+using System.Text.Json;
 
 namespace FluentValidationApproach.Rules;
 
@@ -14,7 +15,9 @@ public class JsonPayloadValidationRule : AbstractValidator<IJsonPayload>
 
     private bool MustBeSafeJson(byte[]? jsonPayload)
     {
-        // process - parse - validate the jsonPayload here.
+        var reader = new Utf8JsonReader(jsonPayload);
+        reader.Read();
+        reader.Skip();
         return true;
     }
 }
