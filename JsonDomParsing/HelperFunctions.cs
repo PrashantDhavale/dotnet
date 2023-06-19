@@ -13,44 +13,49 @@ public class HelperFunctions
 
     public static IEnumerable<string?> ReadJsonArrayElements(string? rawJson, string? nodePath = "")
     {
-        var jsonNode = JsonNode.Parse(rawJson!)!;
+        var baseNode = JsonNode.Parse(rawJson!)!;
 
-        string[] pathNodeNames = nodePath!.Split(".", StringSplitOptions.RemoveEmptyEntries);
+        var nodeNames = nodePath!.Split(".", StringSplitOptions.RemoveEmptyEntries);
 
-        var dataNode = jsonNode.Root;
-        foreach (var pathNode in pathNodeNames)
-            dataNode = dataNode![pathNode]!;
-
-        var arrayAsStrings = new List<string?>();
-        if (dataNode is not null && dataNode is JsonArray)
+        var node = baseNode.Root;
+        foreach (var pathNode in nodeNames)
         {
-            foreach (var item in dataNode.AsArray())
-            {
-                arrayAsStrings.Add(item!.ToJsonString());
-            }
-            return arrayAsStrings;
+            var tmpNode = node![pathNode]!;
+            if (tmpNode is null)
+                break;
+            node = tmpNode;
         }
-        return Enumerable.Empty<string>();
+
+        var arrayElements = new List<string?>();
+        if (node is null || node is not JsonArray)
+            return Enumerable.Empty<string>();
+        
+        foreach (var item in node.AsArray())
+            arrayElements.Add(item!.ToJsonString());
+        
+        return arrayElements;
     }
 
     public static IEnumerable<string?> ReadJsonArray(string? rawJson, string? nodePath = "")
     {
-        using (JsonDocument document = JsonDocument.Parse(rawJson!))
+        using (var document = JsonDocument.Parse(rawJson!))
         {
-            var root = document.RootElement;
-            string[] pathNodeNames = nodePath!.Split(".", StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (var pathNode in pathNodeNames)
-                root.TryGetProperty(pathNode, out root);
-
-            if (root.ValueKind is JsonValueKind.Array)
+            var element = document.RootElement;
+            var nodeNames = nodePath!.Split(".", StringSplitOptions.RemoveEmptyEntries);
+            foreach (var nodeName in nodeNames)
             {
-                var arrayAsStrings = new List<string?>();
-                foreach (JsonElement item in root.EnumerateArray())
+                if (element.ValueKind is JsonValueKind.Undefined || !element.TryGetProperty(nodeName, out element))
+                    break;
+            }
+
+            if (element.ValueKind is JsonValueKind.Array)
+            {
+                var arrayElements = new List<string?>();
+                foreach (JsonElement item in element.EnumerateArray())
                 {
-                    arrayAsStrings.Add(item.GetRawText());
+                    arrayElements.Add(item.GetRawText());
                 }
-                return arrayAsStrings;
+                return arrayElements;
             }
         }
         return Enumerable.Empty<string>();
