@@ -11,7 +11,7 @@ public class HelperFunctions
         return await sr.ReadToEndAsync();
     }
 
-    public static IEnumerable<string?> ReadJsonArrayElements(string? rawJson, string? nodePath = "")
+    public static IEnumerable<string?> ReadJsonArray1(string? rawJson, string? nodePath = "")
     {
         var baseNode = JsonNode.Parse(rawJson!)!;
 
@@ -36,7 +36,7 @@ public class HelperFunctions
         return arrayElements;
     }
 
-    public static IEnumerable<string?> ReadJsonArray(string? rawJson, string? nodePath = "")
+    public static IEnumerable<string?> ReadJsonArray2(string? rawJson, string? nodePath = "")
     {
         using (var document = JsonDocument.Parse(rawJson!))
         {
